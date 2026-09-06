@@ -1,7 +1,3 @@
-function sendAlert(machineName) {
-    alert(`Maintenance notification sent for ${machineName}`);
-    // You can add more advanced notification handling here
-}
 
 document.addEventListener("DOMContentLoaded", function() {
     displayNotifications();
