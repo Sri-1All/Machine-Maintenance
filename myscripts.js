@@ -1,17 +1,13 @@
 function sendAlert(machineName) {
-    alert(`Maintenance notification sent for ${machineName}`);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    displayNotifications();
-});
-
-function sendAlert(machineName) {
     const notification = `Maintenance notification sent for ${machineName} at ${new Date().toLocaleString()}`;
     saveNotification(notification);
     displayNotificationBanner(notification);
 }
- 
+
+document.addEventListener("DOMContentLoaded", function() {
+    displayNotifications();
+}); 
+
 function saveNotification(notification) {
     let notifications = JSON.parse(localStorage.getItem("notifications")) || [];
     notifications.push(notification);
@@ -52,19 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
     displayNotifications();
     displayDashboard();
 });
-
-function scheduleMaintenance(machineName, dateTime) {
-    const reminderTime = new Date(dateTime).getTime() - new Date().getTime();
-    if (reminderTime > 0) {
-        setTimeout(() => {
-            sendAlert(machineName, 'medium');
-            alert(`Scheduled maintenance for ${machineName} is due now.`);
-        }, reminderTime);
-        alert(`Reminder set for ${machineName} on ${formatDate(new Date(dateTime))}`);
-    } else {
-        alert('Please choose a future date and time.');
-    }
-}
 
 // Function to fetch and display upcoming reminders
 function displayReminders() {
