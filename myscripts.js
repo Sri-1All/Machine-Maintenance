@@ -1,8 +1,10 @@
+function sendAlert(machineName) {
+    alert(`Maintenance notification sent for ${machineName}`);
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     displayNotifications();
 });
-
 
 function sendAlert(machineName) {
     const notification = `Maintenance notification sent for ${machineName} at ${new Date().toLocaleString()}`;
