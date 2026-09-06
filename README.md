@@ -130,7 +130,7 @@ Formats the selected date and time for displaying maintenance reminders.
 
 1. Clone or download the repository.
 2. Open the project folder.
-3. Open `mm.html` in a web browser.
+3. Open `index.html` in a web browser.
 4. Select **Notify Maintenance** to generate an alert.
 5. Select a future date and time to schedule maintenance.
 6. View notifications in the **Maintenance Dashboard**.
